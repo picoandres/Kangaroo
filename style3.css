@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-resaltado: cyan;
+    --color-base: white;
+    --color-texto: black;
+    --color-input: rgb(188, 253, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    font-family: "Roboto", sans-serif;
+    font-size: 12pt;
+    color: var(--color-texto);
+    text-align: center;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(imagenes/bg3.png);
+    background-size: cover;
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.226);
+    border-bottom: 1px #00000085;
+}
+
+.titulo {
+    color: rgb(20, 220, 247);
+    font-size: 25px;
+    font-weight: 800;
+    margin-left: 15px;
+}
+
+.logo {
+    position: absolute;
+    top: 8px;
+    left: 150px;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+font-size: 18px;
+padding: 20px;
+color: white;
+display: block;
+}
+
+.menu .navbar ul li a:hover {
+    color:cyan;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    display: none;
+    cursor: pointer;
+}
+
+.iniciar-sesion {
+    box-sizing: border-box;
+    background-color: var(--color-base);
+    height: 500px;
+    width: 90%;
+    max-width: 550px;
+    min-width: 280px;
+    padding: 2rem;
+    border-radius: 20px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;   
+}
+
+form {
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+form > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;  
+}
+
+form label {
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--color-resaltado);
+    fill: var(--color-base);
+    color: var(--color-base);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+form input {
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--color-input);
+    border-left:none;
+    background-color: var(--color-input);
+    transition: 150ms ease;
+}
+
+form input:hover {
+    border-color: var(--color-resaltado);
+}
+
+form input:focus {
+    outline: none;
+    border-color: var(--color-texto)
+}
+
+div:has(input:focus) > label{
+    background-color: var(--color-texto);
+}
+
+form input::placeholder {
+    color: var(--color-texto);
+}
+
+form button{
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: var(--color-resaltado);
+    color: var(--color-base);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+form button:hover{
+    background-color: var(--color-texto); 
+}
+
+form button:focus{
+    outline: none;
+    background-color: var(--color-texto);
+}
+
+p a {
+    color: var(--color-resaltado);
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+@media(max-width: 1250px){
+.menu {
+    padding: 20px;
+    }
+
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 170px;
+    }
+
+.menu label {
+    display: initial;
+    }
+
+.menu .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #303030;
+    display: none;
+    }
+
+.menu .navbar ul li {
+    width: 100%;
+    }
+
+#menu:checked ~ .navbar {
+    display: initial;
+    }
+}
+
+form div.incorrecto label {
+    background-color: #f06272;
+    }
+
+form div.incorrecto input {
+    border-color: #f06272;
+    background-color: #ffc4cb;
+    }
+
+#mensaje-error {
+    color: #f06272;
+    }

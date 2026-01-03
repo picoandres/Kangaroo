@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+     font-family: "Roboto", sans-serif;
+     background-color: rgba(0, 247, 255, 0.158);
+     min-height: 100vh;
+     overflow-x: hidden;
+}
+
+.container {
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+.header {
+    background-image: url(imagenes/bg.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.226);
+    border-bottom: 1px #5e23ca85;
+}
+
+.titulo {
+    color: rgb(20, 220, 247);
+    font-size: 25px;
+    font-weight: 800;
+    margin-left: 15px;
+}
+
+.logo {
+    position: absolute;
+    top: 8px;
+    left: 155px;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+font-size: 18px;
+padding: 20px;
+color: rgb(255, 255, 255);
+display: block;
+}
+
+.menu .navbar ul li a:hover {
+    color:cyan;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    display: none;
+    cursor: pointer;
+}
+
+#nombre-usuario {
+    align-items: center;
+    align-content: center;
+    color: cyan;
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.header-info h1 {
+    color: cyan;
+    text-transform: uppercase;
+    font-size: 70px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.header-info p {
+    color: white;
+    font-size: 22px;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+}
+
+.btn-1 {
+    display: inline-block;
+    padding: 10px 35px;
+    border-radius: 10px;
+    background-color: cyan;
+    font-size: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.btn-1:hover {
+    background-color: #29abcf;
+}
+
+.kangaroo {
+padding: 100px;
+display: flex;
+align-items: center;
+}
+
+.kangaroo-1 {
+    width: 50%;
+    padding-right: 150px;
+    position: relative;
+    left: 75px;
+}
+
+.kangaroo-1 h2 {
+    font-size: 40px;
+    color: rgb(3, 33, 44);
+    text-transform: bold;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+.kangaroo-1 p {
+    font-size: 25px;
+    color: #818181;
+    margin-bottom: 35px;
+}
+
+.kangaroo-1 span {
+    color: rgb(17, 199, 223);
+}
+
+.img-1, .img-2, .img-3, .img-4, .img-5, .img-6 {
+    width: 400px;
+    margin: 10px;
+}
+.img-3, .img-4 {
+    position: relative;
+    left: 20px;
+}
+
+.img-6 {
+    height: 267px;
+}
+
+.footer {
+    border-top: 1px solid cyan;
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+}
+
+.links ul {
+    display: flex;
+}
+
+.links ul li {
+    margin-right: 35px;
+}
+
+.links ul li a {
+    color: #818181;
+}
+
+@media(max-width:991px) {
+
+    .menu {
+        padding: 20px;
+    }
+
+    .logo {
+        position: absolute;
+        top: 10px;
+        left: 170px;
+
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #303030;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .header-content {
+        padding: 30px;
+    }
+
+    .header-info h1 {
+        font-size: 50px;
+        margin-bottom: 5px;
+    }
+
+    .kangaroo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .kangaroo-1 {
+        width: 100%;
+        padding: 0;
+        order: 1;
+    }
+
+    .kangaroo-1 h2 {
+        margin-bottom: 15px;
+        position: relative;
+        right: 75px;
+    }
+
+    .kangaroo-1 p {
+        position: relative;
+        right: 75px;
+    }
+
+    .kangaroo-2 {
+        order: 2;
+        width: 100%;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo-footer {
+        margin-bottom: 30px;
+    }
+
+    .links ul li {
+        margin: 0 10px;
+    }
+}

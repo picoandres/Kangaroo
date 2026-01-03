@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kangaroo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="menu container">
+            <a class="titulo" href="#">KANGAROO</a>
+            <a class="logo" href="#"> <img src="imagenes/logo.png" alt="Logo" width="50"> </a>
+            <input type="checkbox" id="menu">
+            <label for="menu"><img src="imagenes/menu.png" class="menu-icono" alt="Menú"></label>
+            <nav class="navbar">
+                <ul id="menu-auth">
+                    <li><a href="registro.html">Registrarse</a></li>
+                    <li><a href="iniciar-sesion.html">Iniciar sesión</a></li>
+                </ul>
+                <ul id="menu-usuario" style="display: none;">
+                    <li id="nombre-usuario"></li>
+                    <li><a href="#" id="cerrar-sesion">Cerrar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="header-content">
+            <div class="header-info">
+                <h1>Bienvenido</h1>
+                <p>A nuestra página web Kangaroo</p>
+                <a href="#quienes-somos" class="btn-1">Empieza</a>
+            </div>
+    </header>
+
+    <section class="kangaroo" id="quienes-somos">
+        <div class="kangaroo-1">
+            <h2><span>¿Quiénes</span> somos?</h2>
+            <p>
+                Somos un equipo de desarrolladores pequeño, que hicimos la creación de este 
+                pequeño sitio web que permite un registro, y las pruebas 
+                prácticas de cómo funciona el servidor proxy inverso, cuáles son sus beneficios,
+                y también una prueba de aprendizaje autónomo para futuros proyectos.
+            </p>
+        </div>
+
+        <div class="kangaroo-2">
+                <img class="img-1" src="imagenes/g1.jpg" alt="Imagen">
+                <img class="img-2" src="imagenes/g2.jpg" alt="Imagen">
+        </div>
+    </section>
+
+    <section class="kangaroo" id="mision">
+        <div class="kangaroo-2">
+            <img class="img-3" src="imagenes/g3.jpg" alt="Imagen">
+            <img class="img-4" src="imagenes/g4.jpg" alt="Imagen">
+        </div>
+
+        <div class="kangaroo-1">
+            <h2><span>¿Cuál es </span> nuestra misión?</h2>
+            <p>
+                Nuestro objetivo es mostrar a las personas cuál es el funcionamiento de un proxy inverso
+                para que puedan observar la confiabilidad de dicho servidor, y sepan aplicar en sus proyectos
+                una muy buena seguridad y accesibilidad para una manipulación de datos de mejor manera y de una forma 
+                mucho más automatizada.
+            </p>
+        </div>
+    </section>
+
+    <section class="kangaroo" id="metodo">
+        <div class="kangaroo-1">
+            <h2><span>¿Cómo </span> lo logramos?</h2>
+            <p>
+               Decidimos poner nuestro empeño en aprender de nuestros errores y realizar una larga investigación
+               para nuestro progreso y la obtención de un mejor aprendizaje y dominio sobre el tema, para atrevernos a 
+               dar un enfoque más extenso y didáctico.
+            </p>
+        </div>
+        
+        <div class="kangaroo-2">
+            <img class="img-5" src="imagenes/g5.jpg" alt="Imagen">
+            <img class="img-6" src="imagenes/g6.jpg" alt="Imagen">
+        </div>
+    </section>
+
+    <footer class="footer">
+        <a class="logo-footer"> <img src="imagenes/logo.png" alt="Logo" width="50"> </a>
+        <div class="links">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#quienes-somos">Sobre Nosotros</a></li>
+                <li><a href="#mision">Misión</a></li>
+                <li><a href="#metodo">Método</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script>
+        const usuario = JSON.parse(localStorage.getItem('usuarioLogged'))
+
+        const menuAuth = document.getElementById('menu-auth')
+        const menuUsuario = document.getElementById('menu-usuario')
+        const nombreUsuario = document.getElementById('nombre-usuario')
+        const cerrarSesion = document.getElementById('cerrar-sesion')
+
+        if (usuario) {
+            menuAuth.style.display = 'none'
+            menuUsuario.style.display = 'flex'
+            nombreUsuario.innerText = `Hola, ${usuario.nombre}`
+        }
+
+        cerrarSesion.addEventListener('click', () => {
+            localStorage.removeItem('usuarioLogged')
+            location.reload()
+        })
+    </script>
+</body>
+</html>
